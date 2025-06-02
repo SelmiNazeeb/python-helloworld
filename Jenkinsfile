@@ -1,3 +1,4 @@
+@Library('pythonlib') _
 pipeline {
     agent any
     
@@ -26,6 +27,14 @@ pipeline {
                 docker push $IMAGE
                 '''
                 }
+            }
+        }
+	stage('pytest') {
+            steps {
+		pythonBuild()
+                sh '''
+		echo 'pytest shared lib done'
+                '''
             }
         }
         stage('deploy') {
