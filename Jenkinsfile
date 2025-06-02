@@ -40,7 +40,7 @@ pipeline {
             steps {
                 sh '''
                 if (kubectl get svc | grep 'pythonservice'); then
-                    kubectl delete pythonservice
+                    kubectl delete svc pythonservice
                 fi
                 kubectl apply -f service.yaml
                 '''
