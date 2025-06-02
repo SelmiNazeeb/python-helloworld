@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('git') {
             steps {
-                git url: 'https://github.com/SelmiNazeeb/python-helloworld.git', branch: 'master'
+                git url: 'https://github.com/SelmiNazeeb/python-helloworld.git', branch: 'test'
             }
         }
         stage('build') {
